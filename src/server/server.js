@@ -433,8 +433,8 @@ io.on('connection', function (socket) {
                     masa = c.fireFood;
                 else
                     masa = currentPlayer.cells[i].mass*0.1;
-                currentPlayer.cells[i].mass -= masa;
-                currentPlayer.massTotal -=masa;
+                currentPlayer.cells[i].mass -= 0;
+                currentPlayer.massTotal -=0;
                 massFood.push({
                     id: currentPlayer.id,
                     num: i,
@@ -458,7 +458,7 @@ io.on('connection', function (socket) {
             var numMax = currentPlayer.cells.length;
             for(var d=0; d<numMax; d++) {
                 if(currentPlayer.cells[d].mass >= c.defaultPlayerMass*2) {
-                    currentPlayer.cells[d].mass = currentPlayer.cells[d].mass/2;
+                    currentPlayer.cells[d].mass = currentPlayer.cells[d].mass/2+4;
                     currentPlayer.cells[d].radius = util.massToRadius(currentPlayer.cells[d].mass);
                     currentPlayer.cells.push({
                         mass: currentPlayer.cells[d].mass,
